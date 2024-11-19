@@ -1,0 +1,22 @@
+﻿@page "/"
+@using NewKinsWithJason.Data
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+
+
+@code{
+    protected override async Task OnInitializedAsync()
+    {
+        // Path to the JSON file
+        string filePath = Constants.DatabasePath; // Adjust the path as necessary
+
+        // Read and deserialize the JSON file
+        var jsonContent = await File.ReadAllTextAsync(filePath);
+    }
+
+}
